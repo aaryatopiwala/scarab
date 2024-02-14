@@ -4,6 +4,7 @@
 
 > Note: before running Scarab, please ensure that you have installed all
 required software packed shown on the [system requirements](system_requirements.md) page.
+> Additionally, make sure that PIN_ROOT is set to the path of the folder containing pin.exe
 
 We will start off by running the ```qsort``` example on Scarab.
 
