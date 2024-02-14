@@ -23,6 +23,23 @@ Note: Our checkpoint creater scripts only work with PIN-Play currently (due to a
 ## Required Python Packages
 See `$SCARAB_ROOT/bin/requirements.txt`
 
+## How to Setup Scarab
+1. Git clone the scarab repository and cd into scarab
+2. Get the submodules using:
+```git submodule update --init```
+3. Go into src/dep/xed and run:
+```./mfile.py```
+4. Copy PIN 3.15 (for linux) onto the machine
+5. Disable yama if you’re on Ubuntu (check the PIN 3.15 readme)
+6. In the scarab folder, get all the python packages from requirements.txt
+    (You may have to install numpy 1.24.0 if the make command fails)
+7. Go to scarab/src/pin/pin_lib/decoder.cc. Go to line 140 and add an “&” before “opcode”.
+8. Downgrade to gcc 9.5.0
+9. Set PIN_ROOT to the path of the folder that contains pin.exe and run “make” in scarab/src:
+```export PIN_ROOT="/path/to/folder/containing/pin"```
+
+Step 9 is required every time you reboot your machine.
+
 ##### E.g. Install with pip:
 ```
 cd $SCARAB_ROOT/bin
